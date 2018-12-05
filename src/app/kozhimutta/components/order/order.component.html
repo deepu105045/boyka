@@ -1,0 +1,45 @@
+<div class="bg">
+  <div class="parent">
+    <div class="jumbotron">
+      <h1 class="display-3">Buy eggs here</h1>
+      <hr class="my-4">
+      <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
+        <fieldset>
+          <div class="form-group">
+            <label for="count">How many eggs ?</label>
+            <input type="text" class="form-control" id="count" formControlName="count" placeholder="enter number of eggs here">
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="{{auth.user.displayName | async}}">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="text" class="form-control" id="phone" formControlName="phoneNumber" placeholder="enter phone number here ">
+          </div>
+          <div *ngIf="auth.user | async; then authenticated else guest">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #guest>
+  <button type="submit" class="btn btn-primary" disabled>Submit</button>
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Oh boy!</strong> Please login to enable submit button.
+  </div>
+</ng-template>
+
+<ng-template #authenticated>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <div *ngIf="orderCreated">
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{message}}
+    </div>
+  </div>
+</ng-template>

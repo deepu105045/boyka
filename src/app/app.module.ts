@@ -7,10 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-
-
-import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
+import { KozhimuttaModule } from './kozhimutta/kozhimutta.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +21,8 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    KozhimuttaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

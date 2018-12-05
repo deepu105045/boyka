@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height:100vh;    
+}
+
+.parent {
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .child {
+    width: 100px;  /* Or whatever */
+    height: 100px; /* Or whatever */
+    margin: auto;  /* Magic! */
+  }
+
+  .bg{
+    background-image: url('/assets/images/kozhimutta/eggs.jpg');
+    height:100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

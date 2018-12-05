@@ -1,10 +1,7 @@
 import { NgModule, Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
@@ -16,8 +13,12 @@ const routes: Routes = [
     loadChildren:'./user/user.module#UserModule'
   },
   {
+    path:'kozhimutta',
+    loadChildren:'./kozhimutta/kozhimutta.module#KozhimuttaModule'
+  },
+  {
     path: '', 
-    redirectTo: 'welcome', 
+    redirectTo: 'user', 
     pathMatch: 'full' 
   },
   { 
@@ -27,8 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule,RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  bootstrap: [AppComponent]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
