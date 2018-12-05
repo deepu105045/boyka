@@ -61,5 +61,8 @@ export class AuthService {
 
     return userRef.set(data);
   }
+  getCurrentuser() {
+    return this.afAuth.auth.currentUser;
+  }
   
 }
