@@ -20,7 +20,7 @@ interface User {
   providedIn: 'root'
 })
 export class AuthService {
-  user: Observable<User>;
+   user: Observable<User>;
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
 

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist\\boyka",
+    "public": "dist/boyka",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Boyka</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +12,7 @@
         <a class="nav-link">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Expense Tracker</a>
+        <a class="nav-link" routerLink="/expense/add">Expense Tracker</a>
       </li>
       <li class="nav-item">
         <a class="nav-link">Reminders</a>
@@ -25,6 +26,10 @@
       <li class="nav-item">
         <a class="nav-link">About</a>
       </li>
+
+      
+      
+
     </ul>
 
     <div *ngIf="auth.user | async; then authenticated else guest">
@@ -38,15 +43,12 @@
     </ng-template>
 
     <ng-template #authenticated>
-
       <div *ngIf="auth.user | async as user" class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"> <a class="nav-link">Welcome {{user.displayName}}</a></li>
             <li class="nav-item"> <a class="nav-link" (click)="auth.signOut()"> Signout</a></li>
         </ul>
-        
       </div>
-
     </ng-template>
 
   </div>

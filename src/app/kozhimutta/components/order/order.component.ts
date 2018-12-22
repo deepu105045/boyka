@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { User } from 'firebase';
 import { OrderService } from '../../service/order.service';
 import { CommonService } from 'src/app/core/common.service';
+import { Status } from '../../service/status';
+
 
 @Component({
   selector: 'app-order',
@@ -52,11 +54,13 @@ export class OrderComponent implements OnInit {
     order.name = this.orderForm.controls.name.value;
     order.phoneNumber = this.orderForm.controls.phoneNumber.value;
     order.uid = this.uid;
+    order.status = Status.NEW;
     order.id=this.commonService.generateUUID();
     this.orderService.createOrder(order)
             .then(_ => {
               this.orderCreated = true;
               this.message = "Welldone, Your order has been placed"
+              this.orderForm.reset();
             })
           .catch(err => {
             this.orderCreated = false;

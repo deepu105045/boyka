@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren:'./kozhimutta/kozhimutta.module#KozhimuttaModule'
   },
   {
+    path:'expense',
+    loadChildren:'./expense-tracker/expense-tracker.module#ExpenseTrackerModule'         
+  },
+  {
     path: '', 
     redirectTo: 'user', 
     pathMatch: 'full' 

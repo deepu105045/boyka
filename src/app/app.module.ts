@@ -9,6 +9,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { CoreModule } from './core/core.module';
 import { KozhimuttaModule } from './kozhimutta/kozhimutta.module';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { AuthGuard } from './auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { KozhimuttaModule } from './kozhimutta/kozhimutta.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    KozhimuttaModule
+    KozhimuttaModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

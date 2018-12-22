@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-const uuidv1 = require('uuid/v1');
+import * as uuidv1 from 'uuid/v1';
+
+//const uuidv1 = require('uuid/v1');
 
 @Injectable({
   providedIn: 'root'
